@@ -449,6 +449,10 @@ hr {
 /* Mobiles */
 
 @media (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+
   /* Full width header separator */
   header {
     border-bottom: 1px solid #ddd;
@@ -459,26 +463,27 @@ hr {
     padding: 0.5rem 1rem;
   }
 
-  /* Product details */
-  .product-card {
+  /* Main product section stack */
+  .main-product {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: left;
-    margin-bottom: 2rem;
+    gap: 1rem;
   }
 
-  .product-card img {
+  .product-info h1 {
+    font-size: 18px;
+  }
+
+  .product-image img {
     width: 100%;
     height: auto;
-    margin-bottom: 1rem;
   }
 
   /* Move Add to Cart below image */
-  .product-card .btn {
-    display: block;
+  .product-info .btn {
     width: 100%;
     margin-top: 0.5rem;
+    align-self: center;
   }
 
   /* Section separator full width */
@@ -491,32 +496,43 @@ hr {
   }
 
   /* Price range fix */
-  .price-range {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .price-range label {
+  .price label {
+    display: block;
     font-size: 14px;
     white-space: normal; /* wraps text */
+    margin-bottom: 8px;
   }
 
-  .price-range input {
+  .price input {
     margin-right: 0.5rem;
   }
 
   /* People also buy section */
-  .related-products {
+  .also-buy {
     display: flex;
-    justify-content: flex-start;
     gap: 0.5rem;
     overflow-x: auto;
+    justify-content: flex-start;
   }
 
-  .related-products img {
-    width: 100px;
+  .also-buy img {
+    width: 90px;
     height: auto;
     flex-shrink: 0;
+  }
+
+  .sidebar h4 {
+    text-align: left;
+  }
+
+  /*  Gallery grid for products */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .products {
+    grid-template-columns: 1fr; /* 1 per row */
+    gap: 20px;
   }
 }
