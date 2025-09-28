@@ -1,43 +1,40 @@
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
 
-   /*  FILTER BUTTONS  */
-.filter-actions {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
+  header {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .main-product {
+    grid-template-columns: 1fr;  /* stacks */
+    grid-template-areas:
+      "title"
+      "add"
+      "image"
+      "description"
+      "people";
+  }
+
+  .product-image img {
+    height: auto;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;  /* filters on top, products below */
+  }
+
+  .products {
+    grid-template-columns: 1fr; /*shows one product per row */
+  }
+
+  .cart-box {
+    width: 90%;
+    right: 5%;
+    top: 80px;
+  }
 }
 
-.filter-actions button {
-  padding: 5px 10px;
-  font-size: 13px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background: #f5f5f5;
-}
-
-.filter-actions button:hover {
-  background: #ddd;
-}
-
-------------------------------------------
-
-// Add Save & Clear buttons to filters
-  const filterActions = document.createElement("div");
-  filterActions.classList.add("filter-actions");
-
-  const saveBtn = document.createElement("button");
-  saveBtn.textContent = "Save";
-  saveBtn.addEventListener("click", () => {
-    const selected = [...categorySection.querySelectorAll("input:checked")]
-      .map(cb => cb.parentElement.textContent.trim());
-    alert("Saved filters: " + selected.join(", "));
-  });
-
-  const clearBtn = document.createElement("button");
-  clearBtn.textContent = "Clear";
-  clearBtn.addEventListener("click", () => {
-    categorySection.querySelectorAll("input").forEach(cb => (cb.checked = false));
-  });
-
-  filterActions.appendChild(saveBtn);
-  filterActions.appendChild(clearBtn);
-  categorySection.appendChild(filterActions);
+ 
