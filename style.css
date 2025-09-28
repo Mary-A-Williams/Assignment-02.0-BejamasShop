@@ -450,7 +450,9 @@ hr {
 
 @media (max-width: 500px) {
   body {
-    padding: 10px;
+    padding: 25px;
+    overflow-x : hidden !important;
+    max-width: 100% !important;
   }
 
   /* Full width header separator */
@@ -468,6 +470,16 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .main-product h1 {
+    order: -1;
+    font-size: 30px;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    text-align: left;
+    /* margin: 5px 0; */
+    align-self: flex-start;
   }
 
   .product-info h1 {
@@ -513,6 +525,115 @@ hr {
     gap: 0.5rem;
     overflow-x: auto;
     justify-content: flex-start;
+    text-align: left;
+  }
+
+  .long-text, .product-info p {
+    font-size : 14px;
+    line-height: 1.6;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sidebar {
+    text-align: left;
+    float: none;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+   .sidebar h4 {
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-top: 1.9rem;
+    justify-content: flex-start;
+   }
+
+   .details {
+    text-align: left;
+    margin-top: 1.5rem;
+   }
+
+   .details h4 {
+    margin-bottom: 0.5rem;
+   }
+
+  .also-buy img {
+    width: 90px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  /* Mobiles */
+@media (max-width: 500px) {
+  body {
+    padding: 10px;
+  }
+
+  /* 1. Full width header separator */
+  header {
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+
+  /* 2. Main product section stack */
+  .main-product {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .product-info h1 {
+    font-size: 18px;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Move Add to Cart below image */
+  .product-info .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+    align-self: center;
+  }
+
+  /* 3. Section separator full width */
+  hr,
+  .section-separator {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.5rem 0;
+  }
+
+  /* 4. Price range fix */
+  .price label {
+    display: block;
+    font-size: 14px;
+    white-space: normal; /* wraps text */
+    margin-bottom: 8px;
+  }
+
+  .price input {
+    margin-right: 0.5rem;
+  }
+
+  /* 5. People also buy section */
+  .also-buy {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
 
   .also-buy img {
@@ -525,14 +646,33 @@ hr {
     text-align: left;
   }
 
-  /*  Gallery grid for products */
+  @media (max-width: 500px) {
+  /* Fix overlap of filters header and sort */
+  .filters h3,
+  .gallery .sort {
+    position: static;   /* remove absolute positioning */
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: -50px;
+  }
+
+  .gallery .sort {
+    text-align: left;  /* keep sort on right, but below heading */
+    margin-top: 10px;
+  }
+
+  /* Stack filters and products properly */
   .gallery {
     display: flex;
     flex-direction: column;
+  }
   }
 
   .products {
     grid-template-columns: 1fr; /* 1 per row */
     gap: 20px;
   }
+}
 }
