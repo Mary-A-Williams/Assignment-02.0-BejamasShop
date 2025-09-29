@@ -416,46 +416,16 @@ hr {
 }
 
 /* Responsiveness */
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-  body {
-    padding: 20px;
-  }
 
-  .main-product {
-    grid-template-columns: 1fr 250px; /* for smaller sidebar */
-    gap: 20px;
-  }
-
-  .product-image img {
-    height: 300px;
-  }
-
-  .gallery {
-    grid-template-columns: 180px 1fr; /* narrows filters */
-    gap: 20px;
-  }
-
-  .products {
-    grid-template-columns: repeat(2, 1fr); /* shows 2 products per row */
-  }
-
-  .cart-box {
-    width: 70%;
-    right: 15%;
-    top: 85px;
-  }
-}
-/* Mobiles */
-
+   /* Mobiles */
 @media (max-width: 500px) {
   body {
-    padding: 25px;
-    overflow-x : hidden !important;
+    padding: 10px;
+    overflow-x: hidden !important;
     max-width: 100% !important;
   }
 
-  /* Full width header separator */
+  /* header separator */
   header {
     border-bottom: 1px solid #ddd;
     width: 100%;
@@ -465,25 +435,30 @@ hr {
     padding: 0.5rem 1rem;
   }
 
-  /* Main product section stack */
+  .main-product h1 {
+  order: -1;
+  font-size: 30px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.2rem;
+  text-align: left;
+  align-self: flex-start;
+  margin: 5px 0; 
+  }
+  
+
+  /* Main product */
   .main-product {
     display: flex;
     flex-direction: column;
     gap: 1rem;
   }
 
-  .main-product h1 {
-    order: -1;
-    font-size: 30px;
-    margin-bottom: 0.5rem;
-    margin-top: 0.2rem;
-    text-align: left;
-    /* margin: 5px 0; */
-    align-self: flex-start;
+  .product-info h1  {
+    font-size: 18px;
   }
 
-  .product-info h1 {
-    font-size: 18px;
+  .description h3 {
+    font-size: 20px;
   }
 
   .product-image img {
@@ -491,14 +466,15 @@ hr {
     height: auto;
   }
 
-  /* Move Add to Cart below image */
+  /* Cart below image */
   .product-info .btn {
     width: 100%;
     margin-top: 0.5rem;
     align-self: center;
+    border: none;
   }
 
-  /* Section separator full width */
+  /* Section separatorr */
   hr,
   .section-separator {
     width: 100%;
@@ -507,7 +483,7 @@ hr {
     margin: 1.5rem 0;
   }
 
-  /* Price range fix */
+  /* Price range */
   .price label {
     display: block;
     font-size: 14px;
@@ -519,7 +495,7 @@ hr {
     margin-right: 0.5rem;
   }
 
-  /* People also buy section */
+  /*People also buy section */
   .also-buy {
     display: flex;
     gap: 0.5rem;
@@ -546,94 +522,12 @@ hr {
     margin-top: 1.5rem;
   }
 
-   .sidebar h4 {
-    text-align: left;
-    margin-bottom: 0.5rem;
-    margin-top: 1.9rem;
-    justify-content: flex-start;
-   }
-
-   .details {
+  .details {
     text-align: left;
     margin-top: 1.5rem;
-   }
-
-   .details h4 {
+  }
+  .details h4 {
     margin-bottom: 0.5rem;
-   }
-
-  .also-buy img {
-    width: 90px;
-    height: auto;
-    flex-shrink: 0;
-  }
-
-  /* Mobiles */
-@media (max-width: 500px) {
-  body {
-    padding: 10px;
-  }
-
-  /* 1. Full width header separator */
-  header {
-    border-bottom: 1px solid #ddd;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
-  }
-
-  /* 2. Main product section stack */
-  .main-product {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .product-info h1 {
-    font-size: 18px;
-  }
-
-  .product-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Move Add to Cart below image */
-  .product-info .btn {
-    width: 100%;
-    margin-top: 0.5rem;
-    align-self: center;
-  }
-
-  /* 3. Section separator full width */
-  hr,
-  .section-separator {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 1.5rem 0;
-  }
-
-  /* 4. Price range fix */
-  .price label {
-    display: block;
-    font-size: 14px;
-    white-space: normal; /* wraps text */
-    margin-bottom: 8px;
-  }
-
-  .price input {
-    margin-right: 0.5rem;
-  }
-
-  /* 5. People also buy section */
-  .also-buy {
-    display: flex;
-    gap: 0.5rem;
-    overflow-x: auto;
-    justify-content: flex-start;
   }
 
   .also-buy img {
@@ -644,13 +538,16 @@ hr {
 
   .sidebar h4 {
     text-align: left;
+    margin-bottom: 0.5rem;
+    margin-top: 1.9rem;
+    justify-content: flex-start;
   }
 
-  @media (max-width: 500px) {
-  /* Fix overlap of filters header and sort */
+
+  /* Fixed overlap of filters header and sort */
   .filters h3,
   .gallery .sort {
-    position: static;   /* remove absolute positioning */
+    position: static;   
     display: block;
     width: 100%;
     text-align: left;
@@ -659,20 +556,77 @@ hr {
   }
 
   .gallery .sort {
-    text-align: left;  /* keep sort on right, but below heading */
+    text-align: left;  
     margin-top: 10px;
   }
 
-  /* Stack filters and products properly */
+  /* filters and products stackings */
   .gallery {
     display: flex;
     flex-direction: column;
   }
-  }
 
   .products {
-    grid-template-columns: 1fr; /* 1 per row */
+    grid-template-columns: 1fr; 
     gap: 20px;
   }
 }
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  body {
+    padding: 20px;
+    overflow-x : hidden !important;
+  }
+
+  .main-product {
+    grid-template-columns: 1fr 250px; /* for smaller sidebar */
+    gap: 20px;
+  }
+
+  .product-image img {
+    height: auto;
+    width: 100%;
+  }
+
+  .long-text, .product-info p {
+    font-size : 14px;
+    line-height: 1.6;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+  }
+   
+   .details {
+    text-align: left;
+    margin-top: 1.5rem;
+   }
+
+   .details h4 {
+    margin-bottom: 0.5rem;
+   }
+
+   .sidebar h4 {
+    text-align: left;
+   }
+  
+  .gallery {
+    grid-template-columns: 180px 2fr; /* narrows filters */
+    gap: 20px;
+  }
+
+  .products {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* shows 2 products per row */
+    gap: 20px;
+  }
+
+  .cart-box {
+    width: 70%;
+    right: 15%;
+    /* top: 85px; */
+  }
 }
